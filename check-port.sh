@@ -8,6 +8,7 @@ do
 curl --connect-timeout 0.2 http:/$i:22 -s
 if [ "$?" -ne 28 ]
 then
+echo "Connection to $i: "
 curl --connect-timeout 0.2 http:/$i:22
 fi
 done
