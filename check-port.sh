@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function checkport {
-	if nc -zv -w30 $1 $2 <<< '' &> /dev/null
+	if nc $1 $2 <<< '' &> /dev/null
 	then
 		echo "[+] Port $1/$2 is open"
 	else
