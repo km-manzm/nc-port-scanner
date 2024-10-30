@@ -14,9 +14,9 @@ for i in 172.22.228.{1..255}
 do
 # checkport $i 22
 # echo "Check Connection to $i"
-curl --connect-timeout 0.3 http:/$i:22 > 2&>1 /dev/null
+curl --connect-timeout 0.2 http:/$i:22 -s
 if [ "$?" -ne 28 ]
 then
-curl --connect-timeout 0.3 http:/$i:22
+curl --connect-timeout 0.2 http:/$i:22
 fi
 done
