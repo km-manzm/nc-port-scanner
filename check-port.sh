@@ -13,5 +13,7 @@ function checkport {
 for i in 172.22.228.{1..255} 
 do
 # checkport $i 22
-curl --connect-timeout 5 http:/$i:22
+echo "Check Connection to $i"
+curl --connect-timeout 0.3 http:/$i:22
+echo $?
 done
